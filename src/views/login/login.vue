@@ -1,14 +1,13 @@
 <script setup>
 import { ref } from "vue";
 import { UserFilled, Lock } from "@element-plus/icons-vue";
-import {
-  validatePassword,
-  validateUserName,
-} from "@/views/login/formValidators.js";
+import { validatePassword, validateUserName, useLogin } from "@/utils";
+import { useLoadingStore } from "@/stores/loading.js";
+const loadingStore = useLoadingStore();
 
 const loginForm = ref({
-  username: "",
-  password: "",
+  username: "super-admin",
+  password: "123456",
 });
 const loginFormRef = ref();
 
@@ -23,11 +22,15 @@ const loginFormRules = {
   },
 };
 
-function login(formInstance) {
+function handleLogin(formInstance) {
   if (!formInstance) return;
   formInstance.validate((valid) => {
     if (valid) {
       console.log("valid success");
+      useLogin({
+        username: loginForm.value.username,
+        password: loginForm.value.password,
+      });
     } else {
       console.log("valid fail");
     }
@@ -35,7 +38,10 @@ function login(formInstance) {
 }
 </script>
 <template>
-  <div class="h-screen flex flex-row justify-center bg-[#2a3a4d]">
+  <div
+    class="h-screen flex flex-row justify-center bg-[#2a3a4d]"
+    v-loading="loadingStore.loading"
+  >
     <div class="flex flex-col gap-2 mt-40">
       <h2 class="text-center text-white mb-4 font-bold text-lg">用户登录</h2>
       <el-form
@@ -73,7 +79,10 @@ function login(formInstance) {
           ></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button class="w-full" type="primary" @click="login(loginFormRef)"
+          <el-button
+            class="w-full"
+            type="primary"
+            @click="handleLogin(loginFormRef)"
             >登录</el-button
           >
         </el-form-item>
