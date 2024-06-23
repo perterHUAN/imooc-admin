@@ -1,35 +1,11 @@
 # imooc-admin-
 
-This template should help get you started developing with Vue 3 in Vite.
+## 初始配置
+* vue router
+* pina
+* element-plus
+* element-plus/icon
+* tailwindcss
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
+## 登录页面
+![](./public/Design/Login/login-1.png)
