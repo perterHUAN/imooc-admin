@@ -1,7 +1,10 @@
 import { login } from "@/api/login/index.js";
 import { ElMessage } from "element-plus";
 import { useLoadingStore } from "@/stores/loading.js";
+import router from "@/router";
 import { md5 } from "js-md5";
+import { setLocalStorage } from "@/utils";
+import { AUTHENTICATE_TOKEN_NAME } from "@/constants";
 
 async function useLogin({ username, password }) {
   const store = useLoadingStore();
@@ -13,6 +16,8 @@ async function useLogin({ username, password }) {
     });
     if (response.data.success) {
       ElMessage({ message: "登录成功", type: "success", duration: 2000 });
+      setLocalStorage(AUTHENTICATE_TOKEN_NAME, response.data.token);
+      router.push("/");
     } else {
       ElMessage({
         message: response.data.message,
