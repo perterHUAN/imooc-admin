@@ -38,3 +38,9 @@ const instance = axios.create({
 * main
 
 ![](./public/Design/Home/home-structure-1.png)
+### 获取用户信息
+
+
+### header
+#### 头像
+![](./public/Design/Home/avatar.png)

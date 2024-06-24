@@ -16,7 +16,8 @@ async function useLogin({ username, password }) {
     });
     if (response.data.success) {
       ElMessage({ message: "登录成功", type: "success", duration: 2000 });
-      setLocalStorage(AUTHENTICATE_TOKEN_NAME, response.data.token);
+      console.log("response: ", response);
+      setLocalStorage(AUTHENTICATE_TOKEN_NAME, response.data.data.token);
       router.push("/");
     } else {
       ElMessage({

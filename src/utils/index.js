@@ -9,6 +9,7 @@ import {
   clearLocalStorage,
   isExistLocalStorage,
 } from "./localstorage.js";
+import useUserProfile from "./useUserProfile.js";
 
 export {
   request,
@@ -21,4 +22,5 @@ export {
   removeLocalStorage,
   clearLocalStorage,
   isExistLocalStorage,
+  useUserProfile,
 };

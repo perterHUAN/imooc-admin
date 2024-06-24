@@ -1,3 +1,6 @@
-import { AUTHENTICATE_TOKEN_NAME } from "@/constants/localstorage.js";
+import {
+  AUTHENTICATE_TOKEN_NAME,
+  USER_INFO,
+} from "@/constants/localstorage.js";
 
-export { AUTHENTICATE_TOKEN_NAME };
+export { AUTHENTICATE_TOKEN_NAME, USER_INFO };
