@@ -26,3 +26,15 @@ const instance = axios.create({
     headers: {'X-Custom-Header': 'foobar'}
 });
 ```
+
+### 保存token和鉴权跳转
+
+
+## 主页面
+
+### 主页面绘制
+* aside
+* header
+* main
+
+![](./public/Design/Home/home-structure-1.png)
